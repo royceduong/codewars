@@ -1,3 +1,13 @@
+def alphabet_position(text):
+    result = ''
+    for c in text:
+        if c.isalpha():
+            result += str(ord(c.lower()) - ord('a') + 1) + ' '
+    return result.strip()
+
+print(alphabet_position('AAA'))
+
+### BRUTE FORCE
 # def alphabet_position(text):
 #     hash = { 
 #             'a': '1',
@@ -68,15 +78,6 @@
 # # print(stringg.strip())
 # alphabet_position("The sunset sets at twelve o' clock.")
 
-
-def alphabet_position(text):
-    result = ''
-    for c in text:
-        if c.isalpha():
-            result += str(ord(c.lower()) - ord('a') + 1) + ' '
-    return result.strip()
-
-print(alphabet_position('AAA'))
     
 # print(ord("a")-ord("a")+1)
 # ' '.join( ord(c)-ord('a')+1 )

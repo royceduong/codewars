@@ -2,8 +2,8 @@ abc = 'abcdefghijklmnopqrstuvwxyz'
 key = 'keyword'
 class keyword_cipher(object):
     def __init__(self, abc, keyword):
+        self.clean_abc = abc
         for letter in keyword:
-            self.clean_abc = abc
             self.abc = abc
             if letter.isalpha():
                 clean_letter = letter.lower()
@@ -16,36 +16,27 @@ class keyword_cipher(object):
     def encode(self, string):
         self.crypt
         self.array = []
+        print(self.clean_abc)
         for letter in string:
-            # print(letter)
             for l in self.clean_abc:
-                print(l)
+                # print(l)
                 if letter == l:
                     index = self.clean_abc.find(l)
                     self.array.append(index)
-        print(self.array)
+        # print(self.array)
         result = ''
         for idx in self.array:
             result += self.crypt[idx]
-        # print(result)
+        print(result)
         return result
 
-
-        #input 'abc'
-        #return 'key'
-        # what is happening here?
-        # arguments recieved will look through the equivalent placement within self.crypt
-
-    
-        
-
-    # def decode(self, str):
-    #     pass;
+    def decode(self, str):
+        pass;
 
 cipher = keyword_cipher(abc, key)
 cipher1 = keyword_cipher(abc, key)
 cipher.encode('abc')
-cipher1.encode('def')
+cipher1.encode('xyz')
 
 # key = 'keyword'
 
