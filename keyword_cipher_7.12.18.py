@@ -11,16 +11,16 @@ class keyword_cipher(object):
                 abc = modified
             new_abc = keyword.lower() + abc
             self.crypt = new_abc
+            # print(self.crypt)
             # print(self.abc)
             # print(self.crypt)
     def encode(self, string):
-        self.crypt
         self.array = []
-        print(self.clean_abc)
+        # print(self.clean_abc)
         for letter in string:
             for l in self.clean_abc:
                 # print(l)
-                if letter == l:
+                if letter.lower() == l:
                     index = self.clean_abc.find(l)
                     self.array.append(index)
         # print(self.array)
@@ -28,15 +28,32 @@ class keyword_cipher(object):
         for idx in self.array:
             result += self.crypt[idx]
         print(result)
+        print('hello')
         return result
 
-    def decode(self, str):
-        pass;
+    def decode(self, string):
+        self.decode_array = []
+        for x in string:
+            for y in self.crypt:
+                if x.lower() == y:
+                    # print(x)
+                    idx = self.crypt.find(y)
+                    # print(idx)
+                    self.decode_array.append(idx)
+        result = ''
+        for x in self.decode_array:
+            result += self.clean_abc[x]
+        print(result)
+        return result
 
 cipher = keyword_cipher(abc, key)
-cipher1 = keyword_cipher(abc, key)
-cipher.encode('abc')
-cipher1.encode('xyz')
+# cipher1 = keyword_cipher(abc, key)
+# cipher.encode('abc')
+# cipher.encode('xyz')
+# cipher.decode("key") # , "abc")
+cipher.decode("xyz") # , "abc")
+# cipher.encode('ABCHIJ')
+
 
 # key = 'keyword'
 
